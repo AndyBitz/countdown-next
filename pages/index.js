@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import { Motion, spring, presets } from 'react-motion'
+import Delay from '../components/delay'
 import Page from '../components/page'
 import TimerLayout from '../components/timer-layout'
 import TimerCard from '../components/timer-card'
@@ -104,28 +105,33 @@ export default class extends Component {
           top={top}
           bottom={bottom} />
         <TimerLayout>
-          <TimerCard
+          <Timer
+            index={0}
             area="months"
             value={toTwo(this.state.M)}
             bg="aquamarine"
             scale={1.1}
             size={isDesktop ? 10 : 3} />
-          <TimerCard
+          <Timer
+            index={1}
             area="days"
             value={toTwo(this.state.d)}
             bg="cadetblue"
             scale={.9}
             size={2.7} />
-          <TimerCard
+          <Timer
+            index={2}
             area="hours"
             value={toTwo(this.state.h)}
             bg="cornflowerblue"
             size={1.4} />
-          <TimerCard
+          <Timer
+            index={3}
             area="minutes"
             value={toTwo(this.state.m)}
             bg="darkcyan" />
-          <TimerCard
+          <Timer
+            index={4}
             area="seconds"
             value={toTwo(this.state.s)}
             rotate={-this.state.s*6}
@@ -137,9 +143,32 @@ export default class extends Component {
   }
 }
 
-const Timer = () => {
+const Timer = ({ index=1, area, value, rotate, scale=1, size, bg }) => {
 
   return (
-    
+    <Motion
+      defaultStyle={{
+        scale: 0
+      }}
+      style={{
+        scale: spring(scale, presets.wobbly)
+      }}>
+      { styles => (
+          <Delay initial={0} value={styles.scale} period={100+(index*100)}>
+            { delay => (
+                <TimerCard 
+                  area={area}
+                  value={value}
+                  rotate={rotate}
+                  scale={delay}
+                  size={size}
+                  bg={bg}
+                />
+              )
+            }
+          </Delay>
+        )
+      }
+    </Motion>
   )
 }
