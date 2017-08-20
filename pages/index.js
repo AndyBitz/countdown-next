@@ -1,8 +1,10 @@
 import { Component } from 'react'
 import Page from '../components/page'
+import TimerLayout from '../components/timer-layout'
+import TimerCard from '../components/timer-card'
 
 
-class Page extends Component {
+export default class extends Component {
   finalDate = Date.parse("16.07.2017 17:00:00")
 
   state = {
@@ -22,10 +24,14 @@ class Page extends Component {
   render() {
     return (
       <Page>
-        
+        <TimerLayout>
+          <TimerCard area="months" value="M" />
+          <TimerCard area="days" value="M" />
+          <TimerCard area="hours" value="M" />
+          <TimerCard area="minutes" value="M" />
+          <TimerCard area="seconds" value="M" />
+        </TimerLayout>
       </Page>
     )
   }
 }
-
-export default Page
