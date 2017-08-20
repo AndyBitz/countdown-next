@@ -1,0 +1,17 @@
+{
+  "name": "countdown-next",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "dev": "next"
+  },
+  "author": "Andy Bitz",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^3.0.6",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
