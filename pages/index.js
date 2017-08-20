@@ -34,7 +34,7 @@ const daysInMonth = (days) => {
   let rest = days
   let daysLeft = rest
 
-  while (true) {
+  while (daysLeft > 0) {
     // days to subtract
     let sub = len[cur]
     daysLeft = daysLeft - sub
@@ -70,8 +70,10 @@ export default class extends Component {
     document.addEventListener('DOMContentLoaded', (event) => {
       this.setState({ loaded: true })
     })
+  }
 
-    this.intv = setInterval(this.update, 1000)
+  componentDidUpdate() {
+    this.intv = setTimeout(this.update, 1000)
   }
 
   update() {
@@ -82,7 +84,7 @@ export default class extends Component {
   }
 
   componentWillUnmount() {
-    clearInterval(this.intv)
+    clearTimeout(this.intv)
     document.removeEventListener('DOMContentLoaded')
   }
 
