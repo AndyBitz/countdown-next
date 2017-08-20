@@ -4,6 +4,7 @@ export default ({ children }) => (
   <main>
     <Head>
       <title>Countdown</title>
+      <link rel="shortcut icon" href="/static/favicon.png" />
     </Head>
     { children }
     <style jsx>
