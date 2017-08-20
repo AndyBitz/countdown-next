@@ -62,14 +62,11 @@ export default class extends Component {
   finalDate = Date.parse("07.16.2018 17:00:00")
 
   state = {
-    loaded: true,
-    ...parseMs(this.finalDate - Date.now())
+    loaded: true
   }
 
   componentDidMount() {
-    document.addEventListener('DOMContentLoaded', (event) => {
-      this.setState({ loaded: true })
-    })
+    this.setState({ loaded: true })
   }
 
   componentDidUpdate() {
@@ -106,8 +103,8 @@ export default class extends Component {
     return (
       <Page>
         <Background
-          top={top}
-          bottom={bottom} />
+          top={this.state.M ? top : ''}
+          bottom={this.state.M ? bottom : ''} />
         <TimerLayout>
           <Timer
             index={0}
