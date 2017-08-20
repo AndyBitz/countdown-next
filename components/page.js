@@ -24,6 +24,7 @@ export default ({ children }) => (
         background-color: white;
         font-family: monospace;
         font-size: 18px;
+        background-color: darkslategray;
       }
     `}
     </style>

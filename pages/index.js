@@ -85,16 +85,19 @@ export default class extends Component {
             area="months"
             value={this.state.M}
             bg="aquamarine"
-            scale={1.2} />
+            scale={1.1}
+            size={3} />
           <TimerCard
             area="days"
             value={this.state.d}
             bg="cadetblue"
-            scale={.9} />
+            scale={.9}
+            size={2.7} />
           <TimerCard
             area="hours"
             value={this.state.h}
-            bg="cornflowerblue" />
+            bg="cornflowerblue"
+            size={1.4} />
           <TimerCard
             area="minutes"
             value={this.state.m}
