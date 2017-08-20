@@ -63,13 +63,12 @@ export default class extends Component {
 
   state = {
     loaded: true,
-     M: 0, d: 0, h: 0, m: 0, s: 0
+    ...parseMs(this.finalDate - Date.now())
   }
 
   componentDidMount() {
     document.addEventListener('DOMContentLoaded', (event) => {
-      // TODO - won't fire sometimes
-     this.setState({ loaded: true })
+      this.setState({ loaded: true })
     })
 
     this.intv = setInterval(this.update, 1000)
@@ -98,6 +97,9 @@ export default class extends Component {
     
     const isDesktop = typeof window !== 'undefined'
       && window.matchMedia("(min-width: 1200px)").matches
+
+    if (!this.state.loaded)
+      return <Page></Page>
 
     return (
       <Page>
