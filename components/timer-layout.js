@@ -5,6 +5,8 @@ export default ({ children }) => (
     {`
       section {
         overflow: hidden;
+        position: relative;
+        z-index: 2;
         padding: 2em;
         color: snow;
         width: calc(100vw - 4em);

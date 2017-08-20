@@ -2,6 +2,7 @@ import { Component } from 'react'
 import Page from '../components/page'
 import TimerLayout from '../components/timer-layout'
 import TimerCard from '../components/timer-card'
+import Background from '../components/fade-bg'
 
 const parseMs = (ms) => {
   let s = Math.floor(ms/1000)
@@ -47,6 +48,13 @@ const daysInMonth = (days) => {
   return { months, rest }
 }
 
+const toTwo = (nr) => {
+  if (nr < 10 && nr > -10)
+    return `0${nr}`
+  else
+    return nr
+}
+
 export default class extends Component {
   update = this.update.bind(this)
   finalDate = Date.parse("07.16.2018 17:00:00")
@@ -77,34 +85,50 @@ export default class extends Component {
     document.removeEventListener('DOMContentLoaded')
   }
 
+
+
   render() {
+    const top = `${this.state.M}M ${this.state.d}Days`
+    
+    const bH = toTwo(this.state.h)
+    const bM = toTwo(this.state.m)
+    const bS = toTwo(this.state.s)
+
+    const bottom = `${bH}:${bM}:${bS}`
+    
+    const isDesktop = typeof window !== 'undefined'
+      && window.matchMedia("(min-width: 1200px)").matches
+
     return (
       <Page>
+        <Background
+          top={top}
+          bottom={bottom} />
         <TimerLayout>
           <TimerCard
             area="months"
-            value={this.state.M}
+            value={toTwo(this.state.M)}
             bg="aquamarine"
             scale={1.1}
-            size={3} />
+            size={isDesktop ? 10 : 3} />
           <TimerCard
             area="days"
-            value={this.state.d}
+            value={toTwo(this.state.d)}
             bg="cadetblue"
             scale={.9}
             size={2.7} />
           <TimerCard
             area="hours"
-            value={this.state.h}
+            value={toTwo(this.state.h)}
             bg="cornflowerblue"
             size={1.4} />
           <TimerCard
             area="minutes"
-            value={this.state.m}
+            value={toTwo(this.state.m)}
             bg="darkcyan" />
           <TimerCard
             area="seconds"
-            value={this.state.s}
+            value={toTwo(this.state.s)}
             rotate={-this.state.s*6}
             bg="tomato"
             scale={.8} />
