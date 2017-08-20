@@ -81,11 +81,30 @@ export default class extends Component {
     return (
       <Page>
         <TimerLayout>
-          <TimerCard area="months" value={this.state.M} />
-          <TimerCard area="days" value={this.state.d} />
-          <TimerCard area="hours" value={this.state.h} />
-          <TimerCard area="minutes" value={this.state.m} />
-          <TimerCard area="seconds" value={this.state.s} />
+          <TimerCard
+            area="months"
+            value={this.state.M}
+            bg="aquamarine"
+            scale={1.2} />
+          <TimerCard
+            area="days"
+            value={this.state.d}
+            bg="cadetblue"
+            scale={.9} />
+          <TimerCard
+            area="hours"
+            value={this.state.h}
+            bg="cornflowerblue" />
+          <TimerCard
+            area="minutes"
+            value={this.state.m}
+            bg="darkcyan" />
+          <TimerCard
+            area="seconds"
+            value={this.state.s}
+            rotate={-this.state.s*6}
+            bg="tomato"
+            scale={.8} />
         </TimerLayout>
       </Page>
     )

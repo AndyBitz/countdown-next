@@ -1,6 +1,9 @@
-export default ({ area, value }) => {
+export default ({ area, value, rotate=0, scale=1, bg, style }) => {
   const customStyle = {
-    gridArea: area
+    gridArea: area,
+    transform: `rotate(${rotate}deg) scale(${scale})`,
+    backgroundColor: bg,
+    ...style
   }
 
   return (

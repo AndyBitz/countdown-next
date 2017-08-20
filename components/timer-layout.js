@@ -4,12 +4,12 @@ export default ({ children }) => (
     <style jsx>
     {`
       section {
-        padding: 1em;
+        padding: 2em;
         color: snow;
-        width: calc(100vw - 2em);
-        height: calc(100vw - 2em);
+        width: calc(100vw - 4em);
+        height: calc(100vw - 4em);
         display: grid;
-        grid-gap: 1em;
+        grid-gap: 1rem;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         grid-template-areas: "months  months  .       ."
@@ -20,8 +20,8 @@ export default ({ children }) => (
 
       @media (orientation: landscape) {
         section {
-          height: calc(100vh - 2em);
-          width: calc(100vh - 2em);
+          height: calc(100vh - 4em);
+          width: calc(100vh - 4em);
         }
       }
     `}
