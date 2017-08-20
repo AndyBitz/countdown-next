@@ -4,6 +4,7 @@ export default ({ children }) => (
     <style jsx>
     {`
       section {
+        overflow: hidden;
         padding: 2em;
         color: snow;
         width: calc(100vw - 4em);
