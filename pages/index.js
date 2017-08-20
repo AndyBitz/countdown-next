@@ -59,10 +59,11 @@ const toTwo = (nr) => {
 
 export default class extends Component {
   update = this.update.bind(this)
-  finalDate = Date.parse("07.16.2018 17:00:00")
+  finalDate = Date.parse("July 16, 2018 17:00:00")
 
   state = {
-    loaded: true
+    loaded: true,
+    M: 0, d: 0, h: 0, m: 0, s: 0
   }
 
   componentDidMount() {
@@ -75,7 +76,7 @@ export default class extends Component {
 
   update() {
     const elapsed = this.finalDate - Date.now()
-
+    console.log(this.finalDate)
     const time = parseMs(elapsed)
     this.setState({ ...time })
   }
