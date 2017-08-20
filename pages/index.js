@@ -1,4 +1,5 @@
 import { Component } from 'react'
+import { Motion, spring, presets } from 'react-motion'
 import Page from '../components/page'
 import TimerLayout from '../components/timer-layout'
 import TimerCard from '../components/timer-card'
@@ -85,8 +86,6 @@ export default class extends Component {
     document.removeEventListener('DOMContentLoaded')
   }
 
-
-
   render() {
     const top = `${this.state.M}M ${this.state.d}Days`
     
@@ -136,4 +135,11 @@ export default class extends Component {
       </Page>
     )
   }
+}
+
+const Timer = () => {
+
+  return (
+    
+  )
 }
