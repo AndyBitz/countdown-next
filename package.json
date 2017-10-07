@@ -4,15 +4,15 @@
   "main": "index.js",
   "scripts": {
     "start": "next start",
-    "build": "next build",
+    "build": "next build && next export",
     "dev": "next"
   },
   "author": "Andy Bitz",
   "license": "MIT",
   "dependencies": {
-    "next": "^3.0.6",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "next": "^4.0.0-beta.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-motion": "^0.5.0"
   }
 }

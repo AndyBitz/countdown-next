@@ -76,7 +76,7 @@ export default class extends Component {
 
   update() {
     const elapsed = this.finalDate - Date.now()
-    console.log(this.finalDate)
+    // console.log(this.finalDate)
     const time = parseMs(elapsed)
     this.setState({ ...time })
   }
