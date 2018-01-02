@@ -4,15 +4,15 @@
   "main": "index.js",
   "scripts": {
     "start": "next start",
-    "build": "next build && next export",
+    "build": "rm -Rf countdown-next && next build && next export && mv out countdown-next",
     "dev": "next"
   },
   "author": "Andy Bitz",
   "license": "MIT",
   "dependencies": {
-    "next": "^4.0.0-beta.4",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-motion": "^0.5.0"
+    "next": "4.2.1",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-motion": "0.5.2"
   }
 }

@@ -59,7 +59,7 @@ const toTwo = (nr) => {
 
 export default class extends Component {
   update = this.update.bind(this)
-  finalDate = Date.parse("July 16, 2018 17:00:00")
+  finalDate = Date.parse("July 29, 2018 17:00:00")
 
   state = {
     loaded: true,
