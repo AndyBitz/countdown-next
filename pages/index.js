@@ -62,8 +62,8 @@ export default class extends Component {
   finalDate = Date.parse("July 29, 2018 17:00:00")
 
   state = {
-    loaded: true,
-    M: 0, d: 0, h: 0, m: 0, s: 0
+    loaded: false,
+    ...parseMs(this.finalDate - Date.now())
   }
 
   componentDidMount() {
@@ -99,7 +99,7 @@ export default class extends Component {
       && window.matchMedia("(min-width: 1200px)").matches
 
     if (!this.state.loaded)
-      return <Page></Page>
+      return <Page />
 
     return (
       <Page>
